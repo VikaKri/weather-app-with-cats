@@ -1,0 +1,147 @@
+body {
+  background-image: url("../images/catAndSun.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+body .container {
+  color: rgb(255, 255, 255);
+  font-family: "Cinzel", serif;
+  max-width: 700px;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-align: center;
+}
+
+h3 .temperatureMain {
+  font-size: 80px;
+  margin: 5px 0 0 5px;
+}
+
+h3 .temperatureFormat {
+  font-size: 20px;
+  margin: -82px 0px 0px 111px;
+}
+
+h5 {
+  font-size: 15px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+a {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+button .pawCat {
+  color: rgb(255, 255, 255);
+}
+
+button .yourLocation {
+  color: rgb(255, 255, 255);
+}
+
+button .navigation-city {
+  font-size: 20px;
+  max-width: 100%s;
+}
+
+.card {
+  background: linear-gradient(
+    180.3deg,
+    rgba(176, 176, 176, 0.8) 5.5%,
+    rgba(111, 107, 99, 0.8) 90.2%
+  );
+  border: 0;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
+}
+
+.mainCard .image {
+  text-align: center;
+}
+
+.mainIcon {
+  padding-top: 10px;
+  width: 130px;
+}
+
+.mainCard .cityInfo {
+  padding: 5px 0 0 35px;
+  text-align: left;
+}
+
+.maimCard .dateTime {
+  padding: 5px 15px 0 0;
+  text-align: center;
+}
+
+.today .col {
+  text-align: center;
+}
+
+.today .forecastTimeToday {
+  padding: 0 0 5px;
+}
+
+.today .weatherIcon-hour {
+  width: 50px;
+  text-align: center;
+}
+
+.today .forecastTemperatureToday {
+  padding: 5px 0 0;
+}
+
+.nextDays .col-12 {
+  padding: 7px 35px 0 35px;
+}
+
+.nextDays .fiveDays {
+  padding: 0 0 0 35px;
+}
+
+.nextDays .forecastDay {
+  text-align: left;
+}
+
+.nextDays .forecastIcon {
+  text-align: center;
+}
+
+.nextDays .weatherIcon-day {
+  display: block;
+  margin: auto;
+  width: 50px;
+}
+
+.nextDays .forecastTemperature {
+  text-align: right;
+}
+
+.creator {
+  margin: 0 0 40px;
+  text-align: center;
+}
