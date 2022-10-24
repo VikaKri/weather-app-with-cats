@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/87c9566bd7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="card mt-0 mb-4">
+          <div class="card-body">
+            <h1>Weather Forecast with Cats</h1>
+          </div>
+        </div>
+      </form>
+
+      <div class="card mt-4 mb-5">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4">
+              <form id="search">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search City"
+                    id="input-city"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="submit"
+                    id="btn"
+                  >
+                    <i class="fa-solid fa-paw pawCat"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="col-2">
+              <form>
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="location"
+                >
+                  <i class="fa-solid fa-location-dot yourLocation"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col-6">
+              <form>
+                <ul>
+                  <li>
+                    <button
+                      class="btn btn-outline-secondary navigation-city"
+                      type="button"
+                    >
+                      <a href="">London</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="btn btn-outline-secondary navigation-city"
+                      type="button"
+                    >
+                      <a href="">New York</a>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      class="btn btn-outline-secondary navigation-city"
+                      type="button"
+                    >
+                      <a href="">Tokio</a>
+                    </button>
+                  </li>
+                </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-4 mainCard">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4 cityInfo">
+              <form>
+                <h2></h2>
+                <h4></h4>
+                <h5>
+                  <div>Feels like <span class="feelsLikeTemp"></span>°</div>
+                  <div>Humidity: <span class="humidity"></span>%</div>
+                  <div>Wind: <span class="wind"></span> km/h</div>
+                </h5>
+              </form>
+            </div>
+            <div class="col-4 image">
+              <form>
+                <img class="mainIcon" src="images/sun.png" alt="weatherIcon" />
+              </form>
+            </div>
+            <div class="col-4 cityTemperature">
+              <form class="mainCardRight">
+                <div class="dateTime"></div>
+                <h3>
+                  <div class="temperatureMain"></div>
+                  <div class="temperatureFormat">
+                    <a href="" id="celsius"> °C </a>
+                    /
+                    <a href="" id="fahrenheit"> F </a>
+                  </div>
+                </h3>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card my-3 today">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <form>
+                <div class="forecastTimeToday">15:00</div>
+                <div class="forecastIconToday">
+                  <img
+                    class="weatherIcon-hour"
+                    src="images/sun.png"
+                    alt="weatherIcon"
+                  />
+                </div>
+                <div class="forecastTemperatureToday">31°</div>
+              </form>
+            </div>
+            <div class="col">
+              <form>
+                <div class="forecastTimeToday">16:00</div>
+                <div class="forecastIconToday">
+                  <img
+                    class="weatherIcon-hour"
+                    src="images/sun.png"
+                    alt="weatherIcon"
+                  />
+                </div>
+                <div class="forecastTemperatureToday">31°</div>
+              </form>
+            </div>
+            <div class="col">
+              <form>
+                <div class="forecastTimeToday">17:00</div>
+                <div class="forecastIconToday">
+                  <img
+                    class="weatherIcon-hour"
+                    src="images/sun.png"
+                    alt="weatherIcon"
+                  />
+                </div>
+                <div class="forecastTemperatureToday">31°</div>
+              </form>
+            </div>
+            <div class="col">
+              <form>
+                <div class="forecastTimeToday">18:00</div>
+                <img
+                  class="weatherIcon-hour"
+                  src="images/cloudy.png"
+                  alt="weatherIcon"
+                />
+                <div class="forecastTemperatureToday">30°</div>
+              </form>
+            </div>
+            <div class="col">
+              <form>
+                <div class="forecastTimeToday">19:00</div>
+                <img
+                  class="weatherIcon-hour"
+                  src="images/cloudy.png"
+                  alt="weatherIcon"
+                />
+                <div class="forecastTemperatureToday">29°</div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="nextDays">
+        <div class="card mt-5 mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="row underrow">
+                  <div class="col underCol">
+                    <h6 class="forecastDay">Monday</h6>
+                  </div>
+                  <div class="col underCol">
+                    <img
+                      class="weatherIcon-day"
+                      src="images/sun.png"
+                      alt="weatherIcon"
+                    />
+                  </div>
+                  <div class="col underCol">
+                    <h6 class="forecastTemperature">38°/25°</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="row underrow">
+                  <div class="col underCol">
+                    <h6 class="forecastDay">Tuesday</h6>
+                  </div>
+                  <div class="col underCol">
+                    <img
+                      class="weatherIcon-day"
+                      src="images/cloudy.png"
+                      alt="weatherIcon"
+                    />
+                  </div>
+                  <div class="col underCol">
+                    <h6 class="forecastTemperature">39°/18°</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="row underrow">
+                  <div class="col underCol">
+                    <h6 class="forecastDay">Wednesday</h6>
+                  </div>
+                  <div class="col underCol">
+                    <img
+                      class="weatherIcon-day"
+                      src="images/rain.png"
+                      alt="weatherIcon"
+                    />
+                  </div>
+                  <div class="col underCol">
+                    <h6 class="forecastTemperature">27°/15°</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="row underrow">
+                  <div class="col underCol">
+                    <h6 class="forecastDay">Thursday</h6>
+                  </div>
+                  <div class="col underCol">
+                    <img
+                      class="weatherIcon-day"
+                      src="images/cloudy.png"
+                      alt="weatherIcon"
+                    />
+                  </div>
+                  <div class="col underCol">
+                    <h6 class="forecastTemperature">25°/15°</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="row underrow">
+                  <div class="col underCol">
+                    <h6 class="forecastDay">Friday</h6>
+                  </div>
+                  <div class="col underCol">
+                    <img
+                      class="weatherIcon-day"
+                      src="images/rain.png"
+                      alt="weatherIcon"
+                    />
+                  </div>
+                  <div class="col underCol">
+                    <h6 class="forecastTemperature">23°/13°</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="creator">Created by VK</div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
