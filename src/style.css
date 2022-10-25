@@ -45,6 +45,11 @@ a {
   color: rgb(255, 255, 255);
   font-weight: 600;
   text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+
+a:hover {
+  color: rgba(236, 232, 228, 0.885);
 }
 
 ul {
