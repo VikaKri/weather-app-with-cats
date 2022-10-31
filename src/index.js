@@ -41,7 +41,7 @@ function showData(response) {
   document.querySelector(".temperatureMain").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("h4").innerHTML = response.data.weather[0].main;
+  document.querySelector("h4").innerHTML = response.data.weather[0].description;
   document.querySelector(".feelsLikeTemp").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -51,6 +51,12 @@ function showData(response) {
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document
+    .querySelector(".mainIcon")
+    .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+  document
+    .querySelector(".mainIcon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(city) {
