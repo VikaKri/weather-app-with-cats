@@ -57,6 +57,7 @@ function showData(response) {
   document
     .querySelector(".mainIcon")
     .setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 
 function searchCity(city) {
@@ -94,20 +95,29 @@ function locationTemp(event) {
 let button = document.querySelector("#location");
 button.addEventListener("click", locationTemp);
 
-searchCity("London");
-
-function temperatureFormat(event) {
+function desplayFahrenheitTemp(event) {
   event.preventDefault();
-  let target = event.target;
-  let showMainTemp = document.querySelector(".temperatureMain");
-
-  if (target.id === "celsius") {
-    showMainTemp.innerHTML = 30;
-  } else if (target.id === "fahrenheit") {
-    let temperatureMainC = 30;
-    showMainTemp.innerHTML = (temperatureMainC * 9) / 5 + 32;
-  }
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector(".temperatureMain");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let mainTemperature = document.querySelector(".mainCardRight");
-mainTemperature.addEventListener("click", temperatureFormat);
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", desplayFahrenheitTemp);
+
+function desplayCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector(".temperatureMain");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", desplayCelsiusTemp);
+
+searchCity("London");
