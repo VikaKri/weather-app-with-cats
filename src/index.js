@@ -36,6 +36,61 @@ function todayDate() {
 
 todayDate();
 
+function displayForecastToday() {
+  let forecastElement = document.querySelector("#forecastToday");
+  let forecastHTML = `<div class="row">`
+  let hours = ["15:00", "16:00", "17:00", "18:00", "19:00"];
+  hours.forEach(function(hour){
+    forecastHTML = forecastHTML + `<div class="col">
+              <form>
+                <div class="forecastTimeToday">${hour}</div>
+                <div class="forecastIconToday">
+                  <img
+                    class="weatherIcon-hour"
+                    src="images/01d.png"
+                    alt="weatherIcon"
+                  />
+                </div>
+                <div class="forecastTemperatureToday">31°</div>
+              </form>
+              </div>`;
+  })
+
+  forecastHTML = forecastHTML + '</div>';
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function displayForecastNextDays() {
+  let forecastElement = document.querySelector("#forecastNextDays");
+  let forecastHTML = `<div class="row">`
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function(day){
+    forecastHTML = forecastHTML + `<div class="col-12">
+                <div class="row underrow">
+                  <div class="col underCol">
+                    <h6 class="forecastDay">${day}</h6>
+                  </div>
+                  <div class="col underCol">
+                    <img
+                      class="weatherIcon-day"
+                      src="images/01d.png"
+                      alt="weatherIcon"
+                    />
+                  </div>
+                  <div class="col underCol">
+                    <h6 class="forecastTemperature">
+                      <span class="maximumTemperatureNextDays">38°</span> /
+                      <span class="minimumTemperatureNextDays">25°</span>
+                    </h6>
+                  </div>
+                </div>
+              </div>`;
+  })
+
+  forecastHTML = forecastHTML + '</div>';
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showData(response) {
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector(".temperatureMain").innerHTML = Math.round(
@@ -120,4 +175,7 @@ function desplayCelsiusTemp(event) {
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", desplayCelsiusTemp);
 
+displayForecastToday();
+displayForecastNextDays();
 searchCity("London");
+
