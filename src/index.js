@@ -36,60 +36,127 @@ function todayDate() {
 
 todayDate();
 
+function formatHour(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let hour = date.getHours();
+  let hours = [
+    "00:00",
+    "01:00",
+    "02:00",
+    "03:00",
+    "04:00",
+    "05:00",
+    "06:00",
+    "07:00",
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "23:00",
+  ];
+
+  return hours[hour];
+}
+
 function displayForecastToday(response) {
   console.log(response.data.hourly);
+  let forecast = response.data.hourly;
   let forecastElement = document.querySelector("#forecastToday");
-  let forecastHTML = `<div class="row">`
-  let hours = ["15:00", "16:00", "17:00", "18:00", "19:00"];
-  hours.forEach(function(hour){
-    forecastHTML = forecastHTML + `<div class="col">
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastHour, index) {
+    if (index < 6 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
               <form>
-                <div class="forecastTimeToday">${hour}</div>
+                <div class="forecastTimeToday">${formatHour(
+                  forecastHour.dt
+                )}</div>
                 <div class="forecastIconToday">
                   <img
                     class="weatherIcon-hour"
-                    src="images/01d.png"
+                    src="images/${forecastHour.weather[0].icon}.png"
                     alt="weatherIcon"
                   />
                 </div>
-                <div class="forecastTemperatureToday">31°</div>
+                <div class="forecastTemperatureToday">${Math.round(
+                  forecastHour.temp
+                )}°</div>
               </form>
               </div>`;
-  })
+    }
+  });
 
-  forecastHTML = forecastHTML + '</div>';
+  forecastHTML = forecastHTML + "</div>";
   forecastElement.innerHTML = forecastHTML;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
 }
 
 function displayForecastNextDays(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecastNextDays");
-  let forecastHTML = `<div class="row">`
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function(day){
-    forecastHTML = forecastHTML + `<div class="col-12">
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-12">
                 <div class="row underrow">
                   <div class="col underCol">
-                    <h6 class="forecastDay">${day}</h6>
+                    <h6 class="forecastDay">${formatDay(forecastDay.dt)}</h6>
                   </div>
                   <div class="col underCol">
                     <img
                       class="weatherIcon-day"
-                      src="images/01d.png"
+                      src="images/${forecastDay.weather[0].icon}.png"
                       alt="weatherIcon"
                     />
                   </div>
                   <div class="col underCol">
                     <h6 class="forecastTemperature">
-                      <span class="maximumTemperatureNextDays">38°</span> /
-                      <span class="minimumTemperatureNextDays">25°</span>
+                      <span class="maximumTemperatureNextDays">${Math.round(
+                        forecastDay.temp.max
+                      )}°</span> /
+                      <span class="minimumTemperatureNextDays">${Math.round(
+                        forecastDay.temp.min
+                      )}°</span>
                     </h6>
                   </div>
                 </div>
               </div>`;
-  })
+    }
+  });
 
-  forecastHTML = forecastHTML + '</div>';
+  forecastHTML = forecastHTML + "</div>";
   forecastElement.innerHTML = forecastHTML;
 }
 
@@ -97,7 +164,7 @@ function getForecast(coordinates) {
   let unit = "metric";
   let apiKey = "ac209dae1f283fb332a5bb7f50b0f468";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${unit}`;
-  
+
   axios.get(apiUrl).then(displayForecastToday);
   axios.get(apiUrl).then(displayForecastNextDays);
 }
@@ -189,4 +256,3 @@ let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", desplayCelsiusTemp);
 
 searchCity("London");
-
