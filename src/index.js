@@ -87,7 +87,7 @@ function displayForecastToday(response) {
                 <div class="forecastIconToday">
                   <img
                     class="weatherIcon-hour"
-                    src="images/${forecastHour.weather[0].icon}.png"
+                    src="icon-images/${forecastHour.weather[0].icon}.png"
                     alt="weatherIcon"
                   />
                 </div>
@@ -137,7 +137,7 @@ function displayForecastNextDays(response) {
                   <div class="col underCol">
                     <img
                       class="weatherIcon-day"
-                      src="images/${forecastDay.weather[0].icon}.png"
+                      src="icon-images/${forecastDay.weather[0].icon}.png"
                       alt="weatherIcon"
                     />
                   </div>
@@ -186,7 +186,7 @@ function showData(response) {
   );
   document
     .querySelector(".mainIcon")
-    .setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+    .setAttribute("src", `icon-images/${response.data.weather[0].icon}.png`);
   document
     .querySelector(".mainIcon")
     .setAttribute("alt", response.data.weather[0].description);
