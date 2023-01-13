@@ -227,8 +227,32 @@ function locationTemp(event) {
   navigator.geolocation.getCurrentPosition(handleGeolocation);
 }
 
-let button = document.querySelector("#location");
-button.addEventListener("click", locationTemp);
+let locationButton = document.querySelector("#location");
+locationButton.addEventListener("click", locationTemp);
+
+function getTempLondon(event) {
+  event.preventDefault();
+  searchCity("London");
+}
+
+let LondonButton = document.querySelector("#locationLondon");
+LondonButton.addEventListener("click", getTempLondon);
+
+function getTempNewYork(event) {
+  event.preventDefault();
+  searchCity("New York");
+}
+
+let NewYorkButton = document.querySelector("#locationNewYork");
+NewYorkButton.addEventListener("click", getTempNewYork);
+
+function getTempTokyo(event) {
+  event.preventDefault();
+  searchCity("Tokyo");
+}
+
+let TokyoButton = document.querySelector("#locationTokyo");
+TokyoButton.addEventListener("click", getTempTokyo);
 
 function desplayFahrenheitTemp(event) {
   event.preventDefault();
