@@ -1,5 +1,4 @@
 body {
-  background-image: url("../cats-images/01n.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -126,9 +125,6 @@ button .navigation-city {
 
 .today .forecastTemperatureToday {
   padding: 5px 0 0;
-}
-
-h2 {
 }
 
 .minimumTemperatureNextDays {

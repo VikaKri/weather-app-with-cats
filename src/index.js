@@ -190,7 +190,11 @@ function showData(response) {
   document
     .querySelector(".mainIcon")
     .setAttribute("alt", response.data.weather[0].description);
+  document.body.style.backgroundImage = `url('cats-images/${response.data.weather[0].icon}.jpg')`;
+
   celsiusTemperature = response.data.main.temp;
+
+  //background-image: url("../cats-images/01n.jpg");
 
   getForecast(response.data.coord);
 }
