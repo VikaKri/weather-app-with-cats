@@ -24,8 +24,8 @@ h2 {
 }
 
 h3 .temperatureMain {
-  font-size: calc(3.5rem + 7vw);
-  margin: 5px 0 0 5px;
+  font-size: calc(1.5rem + 6vw);
+  margin: 5px 0 0 0;
 }
 
 h3 .temperatureFormat {
