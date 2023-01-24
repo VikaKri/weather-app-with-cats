@@ -35,12 +35,12 @@ h3 .temperatureFormat {
 }
 
 h5 {
-  font-size: 15px;
+  font-size: calc(0.6rem + 0.7vw);
   white-space: nowrap;
 }
 
 h4 {
-  font-size: calc(0.7rem + 1vw);
+  font-size: calc(0.8rem + 1vw);
 }
 
 h6 {
