@@ -21,6 +21,7 @@ h1 {
 
 h2 {
   white-space: nowrap;
+  font-size: calc(0.8rem + 2vw);
 }
 
 h3 .temperatureMain {
