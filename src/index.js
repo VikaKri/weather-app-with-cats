@@ -170,6 +170,7 @@ function getForecast(coordinates) {
 }
 
 function showData(response) {
+  console.log(response.data.daily);
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector(".temperatureMain").innerHTML = Math.round(
     response.data.main.temp
@@ -194,7 +195,6 @@ function showData(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  //background-image: url("../cats-images/01n.jpg");
 
   getForecast(response.data.coord);
 }
