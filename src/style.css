@@ -20,27 +20,27 @@ h1 {
 
 
 h2 {
-  white-space: nowrap;
-  font-size: calc(0.8rem + 2vw);
+  font-size: calc(0.9rem + 1.8vw);
 }
 
 h3 .temperatureMain {
-  font-size: 80px;
+  font-size: calc(3.5rem + 7vw);
   margin: 5px 0 0 5px;
 }
 
 h3 .temperatureFormat {
-  font-size: 20px;
-  margin: 10px 0px 0px 10px;
+  font-size: calc(0.5rem + 1.5vw);
+  margin: 10px 0px 0px 3px;
   white-space: nowrap;
 }
 
 h5 {
   font-size: 15px;
+  white-space: nowrap;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: calc(0.7rem + 1.3vw);
 }
 
 h6 {
@@ -89,6 +89,10 @@ button .navigation-city {
   max-width: 100%s;
 }
 
+div .dateTime {
+  font-size: calc(0.7rem + 0.6vw);
+}
+
 .card {
   background: linear-gradient(
     180.3deg,
@@ -104,8 +108,9 @@ button .navigation-city {
 }
 
 .mainIcon {
-  padding-top: 10px;
-  width: 130px;
+  padding-top: 20px;
+  width: 100%;
+  max-width: 130px;
 }
 
 .mainCard .cityInfo {
@@ -127,7 +132,8 @@ button .navigation-city {
 }
 
 .today .weatherIcon-hour {
-  width: 50px;
+  width: 100%;
+  max-width: 65px;
   text-align: center;
 }
 
