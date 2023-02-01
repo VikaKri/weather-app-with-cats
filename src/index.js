@@ -76,7 +76,7 @@ function displayForecastToday(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastHour, index) {
-    if (index < 5 && index > 0) {
+    if (index < 6 && index > 0) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
@@ -194,7 +194,6 @@ function showData(response) {
   document.body.style.backgroundImage = `url('cats-images/${response.data.weather[0].icon}.jpg')`;
 
   celsiusTemperature = response.data.main.temp;
-
 
   getForecast(response.data.coord);
 }

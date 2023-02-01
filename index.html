@@ -30,18 +30,16 @@
   </head>
   <body>
     <div class="container">
-      <form>
-        <div class="card mt-0 mb-4">
-          <div class="card-body">
-            <h1>Weather Forecast with Cats</h1>
-          </div>
+      <div class="card mt-0 mb-4">
+        <div class="card-body">
+          <h1>Weather Forecast with Cats</h1>
         </div>
-      </form>
+      </div>
 
       <div class="card mt-4 mb-5">
         <div class="card-body">
           <div class="row">
-            <div class="col-4">
+            <div class="col-8">
               <form id="search">
                 <div class="input-group">
                   <input
@@ -61,49 +59,40 @@
               </form>
             </div>
             <div class="col-2">
-              <form>
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="location"
-                >
-                  <i class="fa-solid fa-location-dot yourLocation"></i>
-                </button>
-              </form>
+              <button
+                class="btn btn-outline-secondary currentLocation"
+                type="button"
+                id="location"
+              >
+                <i class="fa-solid fa-location-dot yourLocation"></i>
+              </button>
             </div>
-            <div class="col-6">
-              <form>
-                <ul>
-                  <li>
-                    <button
-                      class="btn btn-outline-secondary navigation-city"
-                      type="button"
-                      id="locationLondon"
-                    >
-                      <a href="">London</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      class="btn btn-outline-secondary navigation-city"
-                      type="button"
-                      id="locationNewYork"
-                    >
-                      <a href="">New York</a>
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      class="btn btn-outline-secondary navigation-city"
-                      type="button"
-                      id="locationTokyo"
-                    >
-                      <a href="">Tokyo</a>
-                    </button>
-                  </li>
-                </ul>
-              </form>
-            </div>
+          </div>
+
+          <div class="gap-4 d-md-flex threeCities">
+            <button
+              class="btn btn-outline-secondary navigation-city"
+              type="button"
+              id="locationLondon"
+            >
+              <a href="">London</a>
+            </button>
+
+            <button
+              class="btn btn-outline-secondary navigation-city"
+              type="button"
+              id="locationNewYork"
+            >
+              <a href="">New York</a>
+            </button>
+
+            <button
+              class="btn btn-outline-secondary navigation-city"
+              type="button"
+              id="locationTokyo"
+            >
+              <a href="">Tokyo</a>
+            </button>
           </div>
         </div>
       </div>
@@ -112,33 +101,27 @@
         <div class="card-body">
           <div class="row">
             <div class="col-5 cityInfo">
-              <form>
-                <h2></h2>
-                <h4></h4>
-                <h5>
-                  <div>Feels like <span class="feelsLikeTemp"></span>°</div>
-                  <div>Humidity: <span class="humidity"></span>%</div>
-                  <div>Wind: <span class="wind"></span> km/h</div>
-                </h5>
-              </form>
+              <h2></h2>
+              <h4></h4>
+              <h5>
+                <div>Feels like <span class="feelsLikeTemp"></span>°</div>
+                <div>Humidity: <span class="humidity"></span>%</div>
+                <div>Wind: <span class="wind"></span> km/h</div>
+              </h5>
             </div>
             <div class="col-3 image">
-              <form>
-                <img class="mainIcon" src="" alt="" />
-              </form>
+              <img class="mainIcon" src="" alt="" />
             </div>
             <div class="col-4 cityTemperature">
-              <form>
-                <div class="dateTime"></div>
-                <h3 class="d-flex weather-temperature">
-                  <div class="temperatureMain"></div>
-                  <div class="temperatureFormat">
-                    <a href="" class="active" id="celsius"> °C </a>
-                    /
-                    <a href="" id="fahrenheit"> F </a>
-                  </div>
-                </h3>
-              </form>
+              <div class="dateTime"></div>
+              <h3 class="d-flex weather-temperature">
+                <div class="temperatureMain"></div>
+                <div class="temperatureFormat">
+                  <a href="" class="active" id="celsius"> °C </a>
+                  /
+                  <a href="" id="fahrenheit"> F </a>
+                </div>
+              </h3>
             </div>
           </div>
         </div>
@@ -148,11 +131,9 @@
         <div class="card-body" id="forecastToday"></div>
       </div>
 
-      <form class="nextDays">
-        <div class="card mt-5 mb-3">
-          <div class="card-body" id="forecastNextDays"></div>
-        </div>
-      </form>
+      <div class="card mt-5 mb-3 nextDays">
+        <div class="card-body" id="forecastNextDays"></div>
+      </div>
 
       <div class="creator">
         <a
