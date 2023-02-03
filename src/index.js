@@ -86,7 +86,7 @@ function displayForecastToday(response) {
                 )}</div>
                 <div class="forecastIconToday">
                   <img
-                    class="weatherIcon-hour"
+                    class="weatherIconHour"
                     src="icon-images/${forecastHour.weather[0].icon}.png"
                     alt="weatherIcon"
                   />
@@ -131,12 +131,12 @@ function displayForecastNextDays(response) {
         forecastHTML +
         `<div class="col-12">
                 <div class="row underrow">
-                  <div class="col underCol">
+                  <div class="col underColDay">
                     <h6 class="forecastDay">${formatDay(forecastDay.dt)}</h6>
                   </div>
                   <div class="col underCol">
                     <img
-                      class="weatherIcon-day"
+                      class="weatherIconDay"
                       src="icon-images/${forecastDay.weather[0].icon}.png"
                       alt="weatherIcon"
                     />

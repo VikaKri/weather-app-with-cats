@@ -24,7 +24,7 @@ h2 {
 
 h3 .temperatureMain {
   font-size: calc(1.5rem + 6vw);
-  margin: 5px 0 0 0;
+  margin: 5px 0 0 -5px;
 }
 
 h3 .temperatureFormat {
@@ -33,18 +33,19 @@ h3 .temperatureFormat {
   white-space: nowrap;
 }
 
+h4 {
+  font-size: calc(0.6rem + 1vw);
+}
+
 h5 {
   font-size: calc(0.55rem + 0.55vw);
   white-space: nowrap;
 }
 
-h4 {
-  font-size: calc(0.6rem + 1vw);
-}
-
 h6 {
   font-size: 17px;
   font-weight: 500;
+  padding-top: 13px;
 }
 
 a {
@@ -66,25 +67,12 @@ a.active:hover {
   color: rgb(255, 255, 255);
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline;
-}
-
 button .pawCat {
   color: rgb(255, 255, 255);
 }
 
 button .yourLocation {
   color: rgb(255, 255, 255);
-}
-
-.navigation-city {
-  font-size: calc(0.5rem + 0.7vw);
 }
 
 div .dateTime {
@@ -101,6 +89,10 @@ div .dateTime {
   box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.4);
 }
 
+.navigation-city {
+  font-size: calc(0.5rem + 0.7vw);
+}
+
 .currentLocation {
   text-align: center;
 }
@@ -114,9 +106,10 @@ div .dateTime {
 }
 
 .mainIcon {
-  padding-top: 20px;
   width: 100%;
   max-width: 130px;
+  margin-right: 20px;
+  padding-top: 20px;
 }
 
 .mainCard .cityInfo {
@@ -137,7 +130,7 @@ div .dateTime {
   padding: 0 0 5px;
 }
 
-.today .weatherIcon-hour {
+.today .weatherIconHour {
   width: 100%;
   max-width: 65px;
   text-align: center;
@@ -145,10 +138,6 @@ div .dateTime {
 
 .today .forecastTemperatureToday {
   padding: 5px 0 0;
-}
-
-.minimumTemperatureNextDays {
-  opacity: 0.5;
 }
 
 .nextDays .col-12 {
@@ -167,18 +156,23 @@ div .dateTime {
   text-align: center;
 }
 
-.nextDays .weatherIcon-day {
+.nextDays .weatherIconDay {
   display: block;
   margin: auto;
-  width: 50px;
+  width: 100%;
+  max-width: 50px;
 }
 
 .nextDays .forecastTemperature {
   text-align: right;
 }
 
+.minimumTemperatureNextDays {
+  opacity: 0.5;
+}
+
 .creator {
+  font-size: calc(0.5rem + 0.4vw);
   margin: 0 0 40px;
   text-align: center;
-  font-size: calc(0.5rem + 0.4vw);
 }
