@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc(0.9rem + 1.8vw);
+  font-size: calc(0.6rem + 1.75vw);
 }
 
 h3 .temperatureMain {
@@ -38,7 +38,7 @@ h5 {
 }
 
 h4 {
-  font-size: calc(0.8rem + 1vw);
+  font-size: calc(0.75rem + 1vw);
 }
 
 h6 {
