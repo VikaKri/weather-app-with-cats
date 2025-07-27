@@ -136,6 +136,7 @@ function getForecast(coordinates) {
 
 function showData(response) {
   console.log(response.data.daily);
+  console.log(response.data.condition.icon);
   document.querySelector("h2").innerHTML = response.data.city;
   document.querySelector(".temperatureMain").innerHTML = Math.round(
     response.data.temperature.current
